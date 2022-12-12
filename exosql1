@@ -1,0 +1,36 @@
+package jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Exosql1 {
+	
+/* EXERCICE 1 Connecter la base de données créée en Java */
+	
+	public static String URL = "jdbc:postgresql://localhost:5432/JDBC";
+	public static String USER = "postgres";
+	public static String PASSWORD = "Oxymore59230";
+	
+    public static Connection connect() {
+        Connection conn = null;
+       
+            try {
+				conn = DriverManager.getConnection(URL, USER, PASSWORD);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+            System.out.println("Connected to the PostgreSQL server successfully.");
+        
+
+        return conn;
+        
+    }
+   
+}
+   
+
+    
