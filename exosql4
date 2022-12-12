@@ -1,0 +1,52 @@
+package jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Exosql4 {
+
+	
+	
+
+	public static String URL = "jdbc:postgresql://localhost:5432/JDBC";
+	public static String USER = "postgres";
+	public static String PASSWORD = "Oxymore59230";
+	
+    public static Connection connect() {
+        Connection conn = null;
+       
+            try {
+				conn = DriverManager.getConnection(URL, USER, PASSWORD);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+            System.out.println("Connected to the PostgreSQL server successfully.");
+        
+
+        return conn;
+    }
+    
+/* exo 4 Afficher à l’écran la liste des employés du service INFORMATIQUE*/
+    
+public static void main(String[] args) throws SQLException {
+        
+        Connection connect = connect();
+        
+        Statement stmt = connect.createStatement();
+        String sql = "SELECT * FROM emp WHERE emploi ='informatique' ";
+        ResultSet res = stmt.executeQuery (sql);
+        
+        
+        while (res.next()) {
+        	System.out.println(res.getString("nom"));
+        	System.out.println(res.getString("prenom"));
+        	
+        }
+       
+    }
+   
+}
