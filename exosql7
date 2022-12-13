@@ -1,1 +1,47 @@
+	try
+		{
+			Class.forName("org.postgresql.Driver");
 
+			Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "Beuvrages59");
+
+			Statement stmt = connection.createStatement();
+
+			System.out.println();
+
+            System.out.println("__________________________________________________________");
+
+			System.out.println("__________________________________________________________");
+
+
+			System.out.println("EXERCICE 7");
+
+			System.out.println("tapez une chaine de caractère en majuscule afin d'afficher les noms qui contiennent ce caractère");
+			Scanner scan = new Scanner ( System.in);
+			String nomL = scan.next();
+
+			ResultSet res = stmt.executeQuery("SELECT * FROM emp where nom LIKE '%" + nomL + "%'");
+
+
+			while(res.next()) {
+
+				int noemp = res.getInt("noemp");
+	         String nom = res.getString("nom");
+	         String prenom = res.getString("prenom");
+	         String emploi = res.getString("emploi");
+	         int sup = res.getInt("sup");
+	         Date embauche = res.getDate("embauche");
+	         int sal = res.getInt("sal");
+	         int comm = res.getInt("comm");
+	         byte noserv = res.getByte("noserv");
+
+				System.out.println(noemp + " " + nom + " " + prenom + " " + emploi + " " + sup + " " + embauche + " " + sal + " " + comm + " " +noserv);
+
+			}
+
+			connection.close();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			System.out.println("Erreur");
+		}
+}
