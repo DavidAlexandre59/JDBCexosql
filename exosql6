@@ -5,9 +5,6 @@ try
 		Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "StAmand59");
 
 		Statement stmt = connection.createStatement();
-		System.out.println("__________________________________________________________");
-
-		System.out.println("__________________________________________________________");
 		
 		System.out.println();
 		System.out.println("tapez >> date d'embauche ");
