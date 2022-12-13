@@ -2,13 +2,11 @@ try
 	{
 		Class.forName("org.postgresql.Driver");
 
-		Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "Beuvrages59");
+		Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "StAMnd59");
 
 		Statement stmt = connection.createStatement();
 		System.out.println();
-		System.out.println("__________________________________________________________");
-
-		System.out.println("__________________________________________________________");
+		
 		System.out.println("Exo numero 5");
 		System.out.println("tapez le nom de l'employé en majuscule");
 		Scanner scan = new Scanner ( System.in);
