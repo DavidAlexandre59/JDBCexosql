@@ -19,6 +19,8 @@ public class Exosql7 {
     public static Connection connect() {
         Connection conn = null;
 	
+	/* OU */
+	
 	try
 		{
 			Class.forName("org.postgresql.Driver");
