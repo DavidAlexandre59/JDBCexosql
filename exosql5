@@ -9,8 +9,6 @@ import java.sql.Statement;
 
 public class Exosql5 {
 
-	
-	
 
 	public static String URL = "jdbc:postgresql://localhost:5432/JDBC";
 	public static String USER = "postgres";
@@ -19,11 +17,16 @@ public class Exosql5 {
     public static Connection connect() {
         Connection conn = null;
 
+
+/*Le bloc try rassemble les appels de méthodes susceptibles de produire des erreurs ou des exceptions. L'instruction try est suivie d'instructions entre des accolades.*/
+
+// OU 
+
 try
 	{
 		Class.forName("org.postgresql.Driver");
 
-		Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "StAMnd59");
+		Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/JDBC", "postgres", "Oxymore59230");
 
 		Statement stmt = connection.createStatement();
 		System.out.println();
