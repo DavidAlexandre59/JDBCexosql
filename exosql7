@@ -2,16 +2,16 @@
 		{
 			Class.forName("org.postgresql.Driver");
 
-			Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "Beuvrages59");
+			Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "StAmand59");
 
 			Statement stmt = connection.createStatement();
 
 			System.out.println();
 
 
-			System.out.println("EXERCICE 7");
+	
 
-			System.out.println("tapez une chaine de caractère en majuscule afin d'afficher les noms qui contiennent ce caractère");
+			System.out.println("chaine de caractère en majuscule");
 			Scanner scan = new Scanner ( System.in);
 			String nomL = scan.next();
 
