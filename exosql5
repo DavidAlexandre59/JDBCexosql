@@ -1,1 +1,44 @@
+try
+	{
+		Class.forName("org.postgresql.Driver");
+
+		Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "Beuvrages59");
+
+		Statement stmt = connection.createStatement();
+		System.out.println();
+		System.out.println("__________________________________________________________");
+
+		System.out.println("__________________________________________________________");
+		System.out.println("Exo numero 5");
+		System.out.println("tapez le nom de l'employé en majuscule");
+		Scanner scan = new Scanner ( System.in);
+		String nomperson = scan.next();
+
+		ResultSet res = stmt.executeQuery("SELECT * FROM emp where nom = '" + nomperson + "'");
+		System.out.println();
+
+		while(res.next()) {
+
+
+			int noemp = res.getInt("noemp");
+         String nom = res.getString("nom");
+         String prenom = res.getString("prenom");
+         String emploi = res.getString("emploi");
+         int sup = res.getInt("sup");
+         String embauche = res.getString("embauche");
+         int sal = res.getInt("sal");
+         int comm = res.getInt("comm");
+         byte noserv = res.getByte("noserv");
+
+			System.out.println(noemp + " " + nom + " " + prenom + " " + emploi + " " + sup + " " + embauche + " " + sal + " " + comm + " " +noserv);
+
+		}
+
+		connection.close();
+	}
+	catch(Exception e) {
+		System.out.println(e);
+		System.out.println("Sa marche pas");
+	}
+	}
 
