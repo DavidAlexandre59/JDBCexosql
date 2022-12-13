@@ -23,7 +23,7 @@ public class Exosql7 {
 		{
 			Class.forName("org.postgresql.Driver");
 
-			Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "StAmand59");
+			Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/JDBC", "postgres", "Oxymore59230");
 
 			Statement stmt = connection.createStatement();
 
