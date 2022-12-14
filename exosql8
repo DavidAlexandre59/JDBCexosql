@@ -1,1 +1,65 @@
+package jdbc;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Exosql7 {
+
+	
+	
+
+	public static String URL = "jdbc:postgresql://localhost:5432/JDBC";
+	public static String USER = "postgres";
+	public static String PASSWORD = "Oxymore59230";
+	
+    public static Connection connect() {
+        Connection conn = null;
+	
+	/* OU */
+	
+	try
+		{
+			Class.forName("org.postgresql.Driver");
+
+			Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/JDBC", "postgres", "Oxymore59230");
+
+			Statement stmt = connection.createStatement();
+
+			System.out.println();
+
+
+	
+
+			System.out.println("chaine de caractère en majuscule");
+			Scanner scan = new Scanner ( System.in);
+			String nomL = scan.next();
+
+			ResultSet res = stmt.executeQuery("SELECT * FROM emp where nom LIKE '%" + nomL + "%'");
+
+
+			while(res.next()) {
+
+				int noemp = res.getInt("noemp");
+	         String nom = res.getString("nom");
+	         String prenom = res.getString("prenom");
+	         String emploi = res.getString("emploi");
+	         int sup = res.getInt("sup");
+	         Date embauche = res.getDate("embauche");
+	         int sal = res.getInt("sal");
+	         int comm = res.getInt("comm");
+	         byte noserv = res.getByte("noserv");
+
+				System.out.println(noemp + " " + nom + " " + prenom + " " + emploi + " " + sup + " " + embauche + " " + sal + " " + comm + " " +noserv);
+
+			}
+
+			connection.close();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			System.out.println("Erreur");
+		}
+}
