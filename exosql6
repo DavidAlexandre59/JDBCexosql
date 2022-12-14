@@ -23,9 +23,12 @@ public class Exosql6 {
 	//OU 
 	
 try
-	{
+
+		/* LOAD LE DRIVER postgresql */
+	{  
 		Class.forName("org.postgresql.Driver");
 
+		/* CONNECTER LA DATABASE */
 		Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/JDBC", "postgres", "Oxymore59230");
 
 		Statement stmt = connection.createStatement();
