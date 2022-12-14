@@ -42,7 +42,7 @@ public class Exosql7 {
 
 			while(res.next()) {
 
-				int noemp = res.getInt("noemp");
+		 int noemp = res.getInt("noemp");
 	         String nom = res.getString("nom");
 	         String prenom = res.getString("prenom");
 	         String emploi = res.getString("emploi");
