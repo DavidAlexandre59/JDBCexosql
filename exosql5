@@ -32,7 +32,7 @@ try
 		System.out.println();
 		
 		System.out.println("Exo numero 5");
-		System.out.println("tapez le nom de l'employé en majuscule");
+		System.out.println("nom de l'employé");
 		Scanner scan = new Scanner ( System.in);
 		String nomperson = scan.next();
 
@@ -42,7 +42,7 @@ try
 		while(res.next()) {
 
 
-			int noemp = res.getInt("noemp");
+	 int noemp = res.getInt("noemp");
          String nom = res.getString("nom");
          String prenom = res.getString("prenom");
          String emploi = res.getString("emploi");
@@ -60,7 +60,7 @@ try
 	}
 	catch(Exception e) {
 		System.out.println(e);
-		System.out.println("Sa marche pas");
+		System.out.println("ERREUR");
 	}
 	}
 
