@@ -30,7 +30,10 @@ try
 
 		/* CONNECTER LA DATABASE */
 		Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/JDBC", "postgres", "Oxymore59230");
-
+		
+		/* L’interface Statement fournit des méthodes pour exécuter des requêtes sur la base de données. */
+		/* L’interface Statement est un factory de ResultSet, c’est-à-dire qu’elle fournit une méthode pour obtenir l’objet de ResultSet. */
+		
 		Statement stmt = connection.createStatement();
 		
 		System.out.println();
@@ -43,7 +46,7 @@ try
 
 		while(res.next()) {
 
-			int noemp = res.getInt("noemp");
+         int noemp = res.getInt("noemp");
          String nom = res.getString("nom");
          String prenom = res.getString("prenom");
          String emploi = res.getString("emploi");
