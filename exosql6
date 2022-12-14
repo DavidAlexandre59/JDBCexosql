@@ -54,7 +54,9 @@ try
          Date embauche = res.getDate("embauche");
          int sal = res.getInt("sal");
          int comm = res.getInt("comm");
-         byte noserv = res.getByte("noserv");
+         
+	 /*BYTE Types de donnée primitifs*/
+	 byte noserv = res.getByte("noserv");
 
 			System.out.println(noemp + " " + nom + " " + prenom + " " + emploi + " " + sup + " " + embauche + " " + sal + " " + comm + " " +noserv);
 
