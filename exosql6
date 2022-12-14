@@ -28,7 +28,7 @@ try
 	{  
 		Class.forName("org.postgresql.Driver");
 
-		/* CONNECTER LA DATABASE */
+		/* CONNECTER LA DATABASE  https://waytolearnx.com/2020/05/connexion-a-une-base-de-donnees-postgresql-avec-jdbc-java.html */
 		Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/JDBC", "postgres", "Oxymore59230");
 		
 		/* L’interface Statement fournit des méthodes pour exécuter des requêtes sur la base de données. */
