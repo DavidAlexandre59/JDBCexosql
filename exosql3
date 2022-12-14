@@ -17,6 +17,9 @@ public class Exosql3 {
     public static Connection connect() {
         Connection conn = null;
        
+       
+       /* ou */
+       
             try {
 				conn = DriverManager.getConnection(URL, USER, PASSWORD);
 			} catch (SQLException e) {
