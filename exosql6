@@ -20,7 +20,7 @@ public class Exosql6 {
         Connection conn = null;
 	
 	
-	//OU 
+	/* OU  */
 	
 try
 
